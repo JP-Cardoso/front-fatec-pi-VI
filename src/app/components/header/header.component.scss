@@ -1,0 +1,59 @@
+.container {
+  padding: 20px;
+
+  .mat-toolbar {
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 4px;
+
+    .icon-container {
+      border: solid 1px white;
+      display: flex;
+      width: 20%;
+      gap: 12px;
+
+      .icon {
+        margin-left: 12px;
+        width: 30px;
+        height: 30px;
+        background-color: white;
+      }
+    }
+
+    .option-container {
+      width: 60%;
+
+      .option-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border: solid 1px white;
+        gap: 16px;
+
+        p {
+          display: inline-block;
+          text-align: center;
+        }
+      }
+    }
+
+    .action-container {
+      border: solid 1px white;
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+
+      span {
+        background-color: aqua;
+        width: 40%;
+        text-align: center;
+        border-radius: 20px;
+      }
+    }
+  }
+}
