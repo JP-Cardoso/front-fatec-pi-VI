@@ -5,5 +5,10 @@ export const routes: Routes = [
   {
     path: "",
     component: HomeComponent
+  },
+  {
+    path: "craete-account",
+    loadComponent: () => import("./pages/create-account/create-account.component").then(m => m.CreateAccountComponent)
   }
 ];
+   
