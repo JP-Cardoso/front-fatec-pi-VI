@@ -1,0 +1,58 @@
+.custom-card {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+
+  .header {
+    .header-content {
+      background-color: #2a2a2a;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-bottom: 20px;
+
+      .header-text {
+        color: #b3ff00;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .content {
+    .title {
+      font-size: 32px;
+      color: #ffffff;
+      margin: 20px 0 10px;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      color: #b3ff00;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+
+    .open-account-button {
+      background-color: #b3ff00;
+      color: #1a1a1a;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 25px;
+      text-transform: none;
+    }
+
+    .open-account-button:hover {
+      background-color: #9ce600;
+      cursor: pointer;
+    }
+  }
+}
