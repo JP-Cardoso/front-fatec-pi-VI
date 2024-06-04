@@ -10,10 +10,10 @@
     gap: 4px;
 
     .icon-container {
-      border: solid 1px white;
       display: flex;
       width: 20%;
       gap: 12px;
+      padding: 6px;
 
       .icon {
         margin-left: 12px;
@@ -31,28 +31,38 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        border: solid 1px white;
-        gap: 16px;
-
-        p {
+        gap: 20px;
+        padding: 6px;
+        span {
+          width: 10%;
           display: inline-block;
           text-align: center;
+        }
+
+        span:hover {
+          border: solid 1px white;
+          border-radius: 20px;
+          cursor: pointer;
         }
       }
     }
 
     .action-container {
-      border: solid 1px white;
       width: 20%;
       display: flex;
       justify-content: center;
       gap: 20px;
+      padding: 6px;
 
-      span {
-        background-color: aqua;
-        width: 40%;
+      .singUp,
+      .login {
+        width: 30%;
         text-align: center;
         border-radius: 20px;
+      }
+
+      .login {
+        background-color: #b3ff00;
       }
     }
   }
