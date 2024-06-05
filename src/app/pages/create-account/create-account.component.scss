@@ -1,0 +1,103 @@
+// Definindo variáveis para cores e tamanhos
+$primary-bg-color: red;
+$card-bg-color: darkolivegreen;
+$form-bg-color: aqua;
+$column-bg-color: darkorange;
+$button-width: 40%;
+$button-height: 40px;
+$button-radius: 20px;
+$input-padding: 10px;
+$input-width: 40%;
+$border-radius: 20px;
+$container-width: 80%;
+$form-width: 90%;
+$gap-size: 20px;
+$social-text-width: 80px;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-bg-color;
+  width: 100%;
+
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $card-bg-color;
+    border-radius: $border-radius;
+    width: $container-width;
+
+    .container-header {
+      margin-top: 30px;
+      width: $container-width;
+      text-align: center;
+    }
+
+    .form-container {
+      width: $container-width;
+      background-color: $form-bg-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      button {
+        margin-top: 20px;
+        width: $button-width;
+        height: $button-height;
+        border-radius: $button-radius;
+      }
+
+      .form-content-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .form-column-1,
+        .form-column-2 {
+          width: $form-width;
+          background-color: $column-bg-color;
+          gap: $gap-size;
+          display: flex;
+          justify-content: center;
+
+          .campo {
+            border-radius: $border-radius;
+            padding: $input-padding;
+            width: $input-width;
+          }
+        }
+      }
+    }
+
+    .social-login {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .social-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        span {
+          border: solid 1px #fff;
+          width: $social-text-width;
+        }
+
+        p {
+          margin-top: 10px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

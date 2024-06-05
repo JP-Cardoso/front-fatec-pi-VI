@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
 
 @Component({
