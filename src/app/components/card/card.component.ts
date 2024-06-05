@@ -16,6 +16,6 @@ export class CardComponent {
   private router: Router = inject(Router);
 
   onOpenAccount() {
-    this.router.navigateByUrl("/craete-account")
+    this.router.navigateByUrl("/create-account")
   }
 }

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { Component, inject } from '@angular/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,5 +12,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+
+  private router: Router = inject(Router);
+
+  onSingUp() {
+    this.router.navigateByUrl("/create-account")
+  }
 
 }

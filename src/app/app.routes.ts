@@ -7,7 +7,7 @@ export const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: "craete-account",
+    path: "create-account",
     loadComponent: () => import("./pages/create-account/create-account.component").then(m => m.CreateAccountComponent)
   }
 ];
