@@ -13,10 +13,15 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
 
+
   private router: Router = inject(Router);
 
   onSingUp() {
-    this.router.navigateByUrl("/create-account")
+    this.router.navigateByUrl("/create-account");
+  }
+
+  onLogin() {
+    this.router.navigateByUrl("/login");
   }
 
 }

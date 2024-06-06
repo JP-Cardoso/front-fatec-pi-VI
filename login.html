@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+        .login-container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            color: #d4ff00;
+        }
+        .login-container p {
+            margin-bottom: 30px;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background: #1e1e1e;
+            color: #fff;
+        }
+        .login-container input:focus {
+            outline: none;
+            border: 2px solid #d4ff00;
+        }
+        .login-container a {
+            color: #d4ff00;
+            text-decoration: none;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background: #d4ff00;
+            color: #000;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-container .signup {
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .login-container .social-login {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .login-container .social-login a {
+            font-size: 24px;
+            color: #d4ff00;
+        }
+        .login-container .social-login a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <p>Welcome back! Please log in to access your account.</p>
+        <form>
+            <input type="email" placeholder="Enter your Email" required>
+            <input type="password" placeholder="Enter your Password" required>
+            <a href="#">Forgot Password?</a>
+            <button type="submit">Login</button>
+            <button type="button" class="signup">Sign Up</button>
+        </form>
+        <div class="social-login">
+            <a href="#"><img src="google-icon.png" alt="Google"></a>
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="apple-icon.png" alt="Apple"></a>
+        </div>
+    </div>
+</body>
+</html>
+

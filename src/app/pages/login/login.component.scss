@@ -1,0 +1,156 @@
+.container {
+  margin-top: 40px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: #fff;
+
+  .login-container {
+    border: 1px solid white;
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 40%;
+
+    .login-header {
+      h1 {
+        color: #d4ff00;
+        font-size: xx-large;
+        font-weight: 500;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      input {
+        width: 100%;
+        padding: 16px;
+        margin: 10px;
+        border: none;
+        border-radius: 24px;
+        background: #1e1e1e;
+        color: #fff;
+      }
+    }
+
+    .options {
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-size: larger;
+        font-weight: 600;
+        border-bottom: 1px solid #fff;
+      }
+
+      button:hover {
+        cursor: pointer;
+      }
+
+      button {
+        margin-top: 10px;
+        width: 60%;
+        padding: 15px;
+        border: none;
+        border-radius: 24px;
+        font-size: medium;
+        font-weight: 500;
+      }
+
+      .btnLogin {
+        background-color: #d4ff00;
+      }
+
+      .btnSingUp {
+        background: #333;
+        color: #fff;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .card-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    span {
+      border: 1px solid white;
+      width: 14%;
+    }
+
+    p {
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+
+  .social-login {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+
+    a {
+      font-size: 24px;
+      color: #d4ff00;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+  }
+
+
+
+}
+
+
+// .login-container h1 {
+//   margin-bottom: 20px;
+//   font-size: 36px;
+//   color: #d4ff00;
+// }
+
+// .login-container p {
+//   margin-bottom: 30px;
+// }
+
+// .login-container .login-container input:focus {
+//   outline: none;
+//   border: 2px solid #d4ff00;
+// }
+
+// .login-container a {
+//   color: #d4ff00;
+//   text-decoration: none;
+// }
+
+// .login-container button {
+//   width: 100%;
+
+//   color: #000;
+//   font-size: 16px;
+//   cursor: pointer;
+// }
+
+// .login-container .signup {
+//   background: #333;
+//   color: #fff;
+//   margin-top: 20px;
+// }
