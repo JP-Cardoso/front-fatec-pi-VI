@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #121212;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+        .container h1 {
+            color: #ccff00;
+        }
+        .container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container input[type="text"],
+        .container input[type="email"],
+        .container input[type="password"] {
+            width: 100%;
+            max-width: 300px;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 25px;
+            background-color: #333;
+            color: #fff;
+        }
+        .container button {
+            width: 100%;
+            max-width: 320px;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 25px;
+            background-color: #ccff00;
+            color: #000;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .container .social-login {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .container .social-login img {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .container .login {
+            margin-top: 20px;
+        }
+        @media (min-width: 768px) {
+            .container {
+                width: 70%;
+                max-width: 600px;
+            }
+            .container input[type="text"],
+            .container input[type="email"],
+            .container input[type="password"] {
+                max-width: 500px;
+            }
+            .container button {
+                max-width: 520px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <p>Join our community today! Create an account to unlock exclusive features and personalized experiences.</p>
+        <form>
+            <input type="text" placeholder="Enter First Name" required>
+            <input type="text" placeholder="Enter Last Name" required>
+            <input type="email" placeholder="Enter your Email" required>
+            <input type="password" placeholder="Enter your Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="login">
+            <button onclick="location.href='login.html'">Login</button>
+        </div>
+        <p>Or Continue with</p>
+        <div class="social-login">
+            <img src="google.png" alt="Google">
+            <img src="facebook.png" alt="Facebook">
+            <img src="apple.png" alt="Apple">
+        </div>
+    </div>
+</body>
+</html>
