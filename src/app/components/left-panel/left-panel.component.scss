@@ -1,3 +1,82 @@
+// :host {
+//   max-width: 300px;
+//   min-height: 100vh;
+//   overflow-y: hidden;
+//   overflow-x: hidden;
+//   display: flex;
+//   flex-direction: column;
+//   background-color: #2c2c2c;
+//   box-shadow: 1px 0px 15px #00000012;
+//   flex: 1;
+
+//   .container {
+//     .user-container {
+//       width: 99%;
+//       height: 120px;
+//       border: 1px solid;
+
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       flex-direction: column;
+
+//       .header {
+//         width: 80%;
+//         margin-top: 4px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         justify-content: space-around;
+//         padding: 4px;
+
+//         img {
+//           border-radius: 50%;
+//           width: 50px;
+//           height: 50px;
+//           object-fit: cover;
+//         }
+
+//         h2 {
+//           margin: 15px 0 10px;
+//           font-size: 24px;
+//           color: white;
+//         }
+
+//       }
+
+//       a {
+//         margin: 8px;
+//         padding: 8px;
+//         font-size: 18px;
+//         text-align: center;
+//         text-decoration: none;
+//         color: white;
+//       }
+
+//       a:hover {
+//         cursor: pointer;
+//       }
+//     }
+//   }
+
+//   .button-container {
+//     display: flex;
+//     justify-content: center;
+//     align-items: flex-start;
+//     flex-direction: column;
+
+//     button {
+//       width: 80%;
+//       margin-top: 20px;
+//       padding: 20px;
+//       border-bottom: 1px solid white;
+//     }
+
+//     button:hover {
+//       cursor: pointer;
+//     }
+//   }
+// }
 :host {
   max-width: 300px;
   min-height: 100vh;
@@ -5,31 +84,70 @@
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  background-color: red;
+  background-color: #2c2c2c;
   box-shadow: 1px 0px 15px #00000012;
   flex: 1;
+
   .container {
-
     .user-container {
-      width:99%;
-      height: 100px;
-      border: 1px solid green;
-    }
-
-    .button-container {
+      width: 99%;
+      height: 120px;
+      border: 1px solid;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       flex-direction: column;
 
-      button {
+      .header {
         width: 80%;
-        margin-top: 20px;
-        padding: 20px;
-        border-bottom: 1px solid white;
+        margin-top: 4px;
+        display: flex;
+        justify-content: space-around; // Corrigido para não ter duplicidade
+        align-items: center;
+        padding: 4px;
+
+        img {
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+        }
+
+        h2 {
+          margin: 15px 0 10px;
+          font-size: 24px;
+          color: white;
+        }
       }
 
-      button:hover {
+      a {
+        margin: 8px;
+        padding: 8px;
+        font-size: 18px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+
+        &:hover { // Utilizando aninhamento SCSS
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    button {
+      width: 80%;
+      margin-top: 20px;
+      padding: 20px;
+      border-bottom: 1px solid white;
+
+      &:hover { // Utilizando aninhamento SCSS
         cursor: pointer;
       }
     }

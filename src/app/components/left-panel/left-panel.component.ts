@@ -5,14 +5,14 @@ import { MatButtonModule } from '@angular/material/button';
   selector: 'app-left-panel',
   standalone: true,
   imports: [
-    MatButtonModule
+    MatButtonModule,
   ],
   templateUrl: './left-panel.component.html',
   styleUrl: './left-panel.component.scss'
 })
 export class LeftPanelComponent {
 
-  onClickPage() {
+  onClickPage(route: string | any) {
     
   }
 
