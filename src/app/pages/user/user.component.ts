@@ -3,6 +3,7 @@ import { LeftPanelComponent } from '../../components/left-panel/left-panel.compo
 import { TransactionsComponent } from '../../components/transactions/transactions.component';
 import { CardComponent } from '../../components/card/card.component';
 import { CardInfoComponent } from '../../components/card-info/card-info.component';
+import { CardAccountComponent } from '../../components/user/card-account/card-account.component';
 
 @Component({
   selector: 'app-user',
@@ -11,7 +12,8 @@ import { CardInfoComponent } from '../../components/card-info/card-info.componen
     LeftPanelComponent,
     TransactionsComponent,
     CardComponent,
-    CardInfoComponent
+    CardInfoComponent,
+    CardAccountComponent
   ],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
