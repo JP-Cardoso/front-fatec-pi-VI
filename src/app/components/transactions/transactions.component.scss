@@ -1,0 +1,30 @@
+:host {
+  flex: 1;
+  .borrowers {
+    margin-top: 20px;
+    background-color: #4a4a8c;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .borrowers table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .borrowers table,
+  .borrowers th,
+  .borrowers td {
+    border: 1px solid #2a2a5e;
+  }
+
+  .borrowers th,
+  .borrowers td {
+    padding: 10px;
+    text-align: left;
+  }
+
+  .borrowers th {
+    background-color: #3a3a6e;
+  }
+}
