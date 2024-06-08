@@ -8,30 +8,24 @@
 
   .borrowers {
     width: 100%;
-    margin-top: 20px;
-    background-color: #4a4a8c;
-    padding: 20px;
-    border-radius: 10px;
-  }
+    border-radius: 8px;
 
-  .borrowers table {
-    width: 100%;
-    border-collapse: collapse;
-  }
+    .demo-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 1em;
 
-  .borrowers table,
-  .borrowers th,
-  .borrowers td {
-    border: 1px solid #2a2a5e;
-  }
+      th {
+        text-align: center;
+        border-start-end-radius: 10px;
+        border-start-start-radius: 10px;
+      }
 
-  .borrowers th,
-  .borrowers td {
-    padding: 10px;
-    text-align: left;
-  }
-
-  .borrowers th {
-    background-color: #3a3a6e;
+      td {
+        text-align: center;
+        border-end-end-radius: 10px;
+        border-end-start-radius: 10px;
+      }
+    }
   }
 }
