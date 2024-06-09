@@ -13,7 +13,7 @@ import { CardAccountComponent } from '../../components/user/card-account/card-ac
     TransactionsComponent,
     CardComponent,
     CardInfoComponent,
-    CardAccountComponent
+    CardAccountComponent,
   ],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
