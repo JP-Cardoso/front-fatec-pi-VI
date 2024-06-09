@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { UserServiceService } from '../../services/user-service.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent {
 
   loginForm!: FormGroup;
   private fb: FormBuilder = inject(FormBuilder);
-
+  private userService: UserServiceService = inject(UserServiceService)
 
   ngOnInit() {
     this.buildForm();
@@ -32,6 +33,8 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    const data = this.loginForm.value;    
+    const data = this.loginForm.value;
+    this.userService.login(data)
+      .subscribe();
   }
 }
