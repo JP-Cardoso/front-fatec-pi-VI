@@ -1,69 +1,20 @@
 <app-header></app-header>
-<!-- <div class="container">
-  <div class="card">
-    <div class="container-header">
-      <h2>Sing Up</h2>
-      <p>Join our community today! Create an account to unlock exclusive features and personalized experiences.</p>
-    </div>
-    <form class="form-container">
-      <div class="form-content-container">
-        <div class="form-column-1">
-          <mat-form-field class="campo">
-            <mat-label>Input</mat-label>
-            <input matInput>
-          </mat-form-field>
-          <mat-form-field class="campo">
-            <mat-label>Input</mat-label>
-            <input matInput>
-          </mat-form-field>
-        </div>
-        <div class="form-column-2">
-          <mat-form-field class="campo">
-            <mat-label>Input</mat-label>
-            <input matInput>
-          </mat-form-field>
-          <mat-form-field class="campo">
-            <mat-label>Input</mat-label>
-            <input matInput>
-          </mat-form-field>
-        </div>
-      </div>
-      <button mat-raised-button color="primary">Sign Up</button>
-      <button mat-raised-button color="warn">Warn</button>
-    </form>
-
-    <div class="social-login">
-      <div class="social-text">
-        <span></span>
-        <p>Ou continue com </p>
-        <span></span>
-      </div>
-
-      <div class="social-buttons">
-        <button mat-icon-button>X</button>
-        <button mat-icon-button>X</button>
-        <button mat-icon-button>X</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-
 <div class="container">
   <div class="form-container">
     <h1>Sign Up</h1>
     <p>Join our community today! Create an account to unlock exclusive features and personalized experiences.</p>
-    <form>
+    <form [formGroup]="singUpForm">
       <div class="form-tab-1">
-        <input type="text" placeholder="Enter First Name" required>
-        <input type="text" placeholder="Enter Last Name" required>
+        <input type="text" placeholder="Enter First Name" formControlName="name">
+        <input type="text" placeholder="Enter Last Name" formControlName="lastName">
       </div>
       <div class="form-tab-2">
-        <input type="email" placeholder="Enter your Email" required>
-        <input type="password" placeholder="Enter your Password" required>
+        <input type="email" matInput placeholder="Enter your Email" formControlName="email">
+        <input type="password" placeholder="Enter your Password" formControlName="password">      
       </div>
     </form>
     <div class="login">
-      <button type="submit" class="btnSingUp">Sign Up</button>
+      <button type="submit" (click)="onSubmit()" [disabled]="singUpForm.invalid" class="btnSingUp">Create</button>
       <button>Login</button>
     </div>
     <div class="card-info">
@@ -72,9 +23,9 @@
       <span></span>
     </div>
     <div class="social-login">
-      <img src="google.png" alt="Google">
-      <img src="facebook.png" alt="Facebook">
-      <img src="apple.png" alt="Apple">
+      <!--<img src="google.png" alt="Google">-->
+      <!--<img src="facebook.png" alt="Facebook">-->
+      <!--<img src="apple.png" alt="Apple">-->
     </div>
   </div>
 </div>
