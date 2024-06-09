@@ -13,10 +13,10 @@ export class UserServiceService {
   ) { }
 
   login(data: any): Observable<any> {
-    return this.http.post<any>(`${environment.BASE_URL}`, data);
+    return this.http.post<any>(`${environment.BASE_URL}/auth`, data);
   }
 
   register(data: any): Observable<any> {
-    return this.http.post<any>(`${environment.BASE_URL}`, {});
+    return this.http.post<any>(`${environment.BASE_URL}/user`, data);
   }
 }

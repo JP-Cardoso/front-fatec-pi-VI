@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from '../../components/header/header.component';
+import { UserServiceService } from '../../services/user-service.service';
 
 
 @Component({
@@ -28,6 +29,8 @@ export class CreateAccountComponent {
   formControl: any;
   emailFormControl: any;
   hide = true;
+  private userService: UserServiceService = inject(UserServiceService);
+
 
   ngOnInit() {
     this.buildForm();
@@ -45,9 +48,17 @@ export class CreateAccountComponent {
   }
 
   onSubmit() {
-    const data = this.singUpForm.value;
-    console.log(data);
-    
+    const data = this.formatJson();
+    this.userService.register(data).subscribe()
+  }
+
+  formatJson() {
+    const { name, lastName, email, password } = this.singUpForm.value;
+    return {
+      nome: `${name} ${lastName}`,
+      email,
+      password
+    }
   }
 
 }
