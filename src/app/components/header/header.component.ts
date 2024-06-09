@@ -15,6 +15,7 @@ import { IconComponent } from '../icon/icon.component';
 })
 export class HeaderComponent {
 
+
   private logo: string = "/src/assets/icons/icon-a.svg"
 
   private router: Router = inject(Router);
@@ -30,6 +31,10 @@ export class HeaderComponent {
 
   onLogin() {
     this.router.navigateByUrl("/login");
+  }
+
+  onNavigate(path: string) {
+    this.router.navigateByUrl(`${path}`);
   }
 
 }
