@@ -1,19 +1,16 @@
 :host {
   display: flex;
-  // background-color: aqua;
 
   .container {
     margin: 10px;
     display: flex;
     flex-direction: column;
     flex: 1;
-    // background-color: red;
     padding: 10px;
     justify-content: center;
 
     .card-container {
       margin-top: 40px;
-      background-color: white;
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -22,17 +19,12 @@
       padding: 12px;
 
       app-card-account {
-
         width: 100%;
       }
 
       app-card-info {
         width: 48%;
       }
-    }
-
-    app-transactions {
-
     }
   }
 }

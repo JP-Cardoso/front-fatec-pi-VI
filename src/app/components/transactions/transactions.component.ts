@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
+import { Component, LOCALE_ID } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'app-transactions',
   standalone: true,
   imports: [
-    MatTableModule
+    MatTableModule,
+    CurrencyPipe
   ],
+
   templateUrl: './transactions.component.html',
   styleUrl: './transactions.component.scss'
 })
@@ -23,7 +26,7 @@ export class TransactionsComponent {
   ];
 
   ngOnInit() {
-    this.dataSource = this.transacoes.sort();   
+    this.dataSource = this.transacoes.sort();
   }
 }
 

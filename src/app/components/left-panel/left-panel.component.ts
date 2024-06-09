@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-left-panel',
@@ -11,9 +12,15 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './left-panel.component.scss'
 })
 export class LeftPanelComponent {
+  
+  private router: Router = inject(Router)
+  
+  logout() {
+    this.router.navigateByUrl("/")
+  }
 
   onClickPage(route: string | any) {
-    
+
   }
 
 }
