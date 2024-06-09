@@ -8,6 +8,9 @@
 }
 
 .form-container {
+  background-image: url("../../../assets/bg.jpg");
+  background-repeat: cover;
+
   border: 1px solid #333;
   border-radius: 24px;
   text-align: center;
@@ -86,12 +89,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     .social-login {
       width: 30%;
       display: flex;
       justify-content: space-between;
       margin-top: 20px;
-    
+
       img {
         border-radius: 50%;
         width: 26px;
