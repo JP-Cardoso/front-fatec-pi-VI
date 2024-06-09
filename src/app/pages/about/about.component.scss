@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .yourbank-container {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 600px;
+
+    .content {
+      max-width: 60%;
+
+      h1 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+      }
+
+      h2 {
+        font-size: 1.5em;
+        margin-bottom: 1em;
+
+        .highlight {
+          color: #a8ff00;
+        }
+      }
+
+      p {
+        font-size: 1em;
+        line-height: 1.5em;
+      }
+    }
+
+    .image-container {
+      max-width: 35%;
+
+      img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
+}
