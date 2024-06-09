@@ -29,17 +29,25 @@
 
     form {
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
 
-      input {
-        width: 100%;
-        padding: 16px;
-        margin: 10px;
+      .input {
+        width: 42%;
         border: none;
-        border-radius: 24px;
-        background: #1e1e1e;
         color: #fff;
+
+        button {
+          background-color: transparent;
+        }
+
+        button:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        button:focus {
+          outline: none;
+        }
       }
     }
 

@@ -6,8 +6,24 @@
       <p>Welcome back! Please log in to access your account.</p>
     </div>
     <form [formGroup]="loginForm">
-      <input type="email" placeholder="Enter your Email" formControlName="email">
-      <input type="password" placeholder="Enter your Password" formControlName="password">
+      <mat-form-field class="input">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="email" required>
+        @if (loginForm.hasError('email') && !loginForm.hasError('required')) {
+          <mat-error>Please enter a valid email address</mat-error>
+        }
+        @if (loginForm.hasError('required')) {
+          <mat-error>Email is <strong>required</strong></mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
     </form>
     <div class="options">
       <a href="#">Forgot Password?</a>
