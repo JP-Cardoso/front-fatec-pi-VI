@@ -1,0 +1,11 @@
+.conatiner-card {
+  flex: 1;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  .card-header {
+    text-align: center;
+  }
+}

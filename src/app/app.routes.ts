@@ -17,5 +17,9 @@ export const routes: Routes = [
   {
     path: "account",
     loadComponent: () => import("./pages/user/user.component").then(m => m.UserComponent)
+  },
+  {
+    path: "not-account",
+    loadComponent: () => import("./components/user/not-account/not-account.component").then(m => m.NotAccountComponent)
   }
 ];

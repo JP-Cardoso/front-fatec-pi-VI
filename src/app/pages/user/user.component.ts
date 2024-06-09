@@ -4,6 +4,7 @@ import { TransactionsComponent } from '../../components/user/transactions/transa
 import { CardComponent } from '../../components/card/card.component';
 import { CardInfoComponent } from '../../components/card-info/card-info.component';
 import { CardAccountComponent } from '../../components/user/card-account/card-account.component';
+import { NotAccountComponent } from '../../components/user/not-account/not-account.component';
 
 @Component({
   selector: 'app-user',
@@ -14,10 +15,12 @@ import { CardAccountComponent } from '../../components/user/card-account/card-ac
     CardComponent,
     CardInfoComponent,
     CardAccountComponent,
+    NotAccountComponent
   ],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
 })
 export class UserComponent {
 
+  account:boolean = false;
 }
