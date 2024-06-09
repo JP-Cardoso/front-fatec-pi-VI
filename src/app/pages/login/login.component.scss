@@ -109,18 +109,29 @@
     }
   }
 
-  .social-login {
-    margin-top: 20px;
+  .social-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 
-    a {
-      font-size: 24px;
-      color: #d4ff00;
-    }
+    .social-login {
+      width: 30%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
 
-    a:hover {
-      color: #fff;
+      img {
+        border-radius: 50%;
+        width: 26px;
+        height: 26px;
+        text-align: center;
+        object-fit: cover;
+
+      }
+
+      img:hover {
+        cursor: pointer;
+      }
     }
   }
 }
