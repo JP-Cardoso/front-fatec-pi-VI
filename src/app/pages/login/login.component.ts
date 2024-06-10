@@ -52,15 +52,13 @@ export class LoginComponent {
       .subscribe(
         {
           next: (res) => {
-            const { token, id, nome } = res.data;
+            const { token, id, nome } = res.data;            
             this.localStorageService.setLocalStorage('token', JSON.stringify(token));
-            this.localStorageService.setLocalStorage('nome', nome);
+            this.localStorageService.setLocalStorage('nome', JSON.stringify(nome.captalize()));
             this.localStorageService.setLocalStorage('id', id);
           },
           error: () => { },
-          complete: () => {
-            console.log('complete');
-            
+          complete: () => {            
             this.router.navigateByUrl("/account")
           }
 
