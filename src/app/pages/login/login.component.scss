@@ -40,15 +40,9 @@
         color: #fff;
 
         button {
-          background-color: transparent;
-        }
-
-        button:hover {
-          background-color: rgba(0, 0, 0, 0.1);
-        }
-
-        button:focus {
-          outline: none;
+          background: transparent;
+          border: none;
+          color: inherit;
         }
       }
     }
