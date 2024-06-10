@@ -4,14 +4,44 @@
     <h1>Sign Up</h1>
     <p>Join our community today! Create an account to unlock exclusive features and personalized experiences.</p>
     <form [formGroup]="singUpForm">
-      <div class="form-tab-1">
-        <input type="text" placeholder="Enter First Name" formControlName="name">
-        <input type="text" placeholder="Enter Last Name" formControlName="lastName">
-      </div>
-      <div class="form-tab-2">
-        <input type="email" matInput placeholder="Enter your Email" formControlName="email">
-        <input type="password" placeholder="Enter your Password" formControlName="password">
-      </div>
+      <mat-form-field class="input">
+        <mat-label>Digite seu nome:</mat-label>
+        <input matInput placeholder="João da Silva" formControlName="email" required>
+        @if (singUpForm.hasError('email') && !singUpForm.hasError('required')) {
+        <mat-error>Please enter a valid email address</mat-error>
+        }
+        @if (singUpForm.hasError('required')) {
+        <mat-error>Email is <strong>required</strong></mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label>Digite seu email</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="email" required>
+        @if (singUpForm.hasError('email') && !singUpForm.hasError('required')) {
+        <mat-error>Please enter a valid email address</mat-error>
+        }
+        @if (singUpForm.hasError('required')) {
+        <mat-error>Email is <strong>required</strong></mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="email" required>
+        @if (singUpForm.hasError('email') && !singUpForm.hasError('required')) {
+        <mat-error>Please enter a valid email address</mat-error>
+        }
+        @if (singUpForm.hasError('required')) {
+        <mat-error>Email is <strong>required</strong></mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
     </form>
     <div class="login">
       <button type="submit" (click)="onSubmit()" [disabled]="singUpForm.invalid" class="btnSingUp">Create</button>

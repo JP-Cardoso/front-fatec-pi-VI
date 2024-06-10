@@ -31,6 +31,7 @@ export class CreateAccountComponent {
   hide = true;
   private userService: UserServiceService = inject(UserServiceService);
 
+  errorMessage = '';
 
   ngOnInit() {
     this.buildForm();
@@ -60,5 +61,6 @@ export class CreateAccountComponent {
       password
     }
   }
+
 
 }
