@@ -8,7 +8,6 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { UserServiceService } from '../../services/user-service.service';
 import { FormValidatios } from '../../validators/form-validator';
 
-
 @Component({
   selector: 'app-create-account',
   standalone: true,
@@ -56,11 +55,11 @@ export class CreateAccountComponent {
   }
 
   formatJson() {
-    const { name, lastName, email, password } = this.singUpForm.value;
+    const { name, confirPpassword, email } = this.singUpForm.value;
     return {
-      nome: `${name} ${lastName}`,
+      nome: name,
       email,
-      password
+      confirPpassword
     }
   }
 
