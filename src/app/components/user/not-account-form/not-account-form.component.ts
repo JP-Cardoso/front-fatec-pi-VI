@@ -25,6 +25,10 @@ export class NotAccountFormComponent {
   constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.buildForm();
+  }
+
+  buildForm() {
     this.firstFormGroup = this._formBuilder.group({
       name: ['', Validators.required]
     });
@@ -33,7 +37,7 @@ export class NotAccountFormComponent {
     });
   }
 
-  onSubmit() {
+  onValidateForm() {
     if (this.firstFormGroup.valid && this.secondFormGroup.valid) {
       const formData = {
         ...this.firstFormGroup.value,
@@ -42,4 +46,8 @@ export class NotAccountFormComponent {
       console.log('Formulário enviado com sucesso!', formData);
     }
   }
+
+  buildObject() {}
+
+  onSubmit() {}
 }
