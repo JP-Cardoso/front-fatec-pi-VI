@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from '../../components/header/header.component';
 import { UserServiceService } from '../../services/user-service.service';
 import { FormValidatios } from '../../validators/form-validator';
+import { SnackBarService } from '../../services/snack-bar.service';
 
 @Component({
   selector: 'app-create-account',
@@ -25,10 +26,10 @@ import { FormValidatios } from '../../validators/form-validator';
 export class CreateAccountComponent {
 
   singUpForm!: FormGroup;
-  private fb: FormBuilder = inject(FormBuilder)
-  hide = true;
+  private fb: FormBuilder = inject(FormBuilder);
   private userService: UserServiceService = inject(UserServiceService);
-
+  hide = true;
+  snackBarService: SnackBarService = inject(SnackBarService);
 
   ngOnInit() {
     this.buildForm();
@@ -51,7 +52,16 @@ export class CreateAccountComponent {
 
   onSubmit() {
     const data = this.formatJson();
-    this.userService.register(data).subscribe()
+    this.userService.register(data).
+      subscribe(
+        {
+          next: () => {},
+          error:(msg) => {
+            const text: string = "Erro ao cadastrar usuário";
+            this.snackBarService.error(msg);
+          }
+        }
+      )
   }
 
   formatJson() {

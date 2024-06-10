@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { LocalStorageService } from '../../services/local-storage.service';
 import { Router } from '@angular/router';
+import { SnackBarService } from '../../services/snack-bar.service';
 
 @Component({
   selector: 'app-login',
@@ -27,9 +28,11 @@ export class LoginComponent {
   loginForm!: FormGroup;
   private fb: FormBuilder = inject(FormBuilder);
   private userService: UserServiceService = inject(UserServiceService);
-  private router:Router = inject(Router);
+  private router: Router = inject(Router);
   private localStorageService: LocalStorageService = inject(LocalStorageService);
   hide = true;
+  snackBarService: SnackBarService = inject(SnackBarService);
+
 
   ngOnInit() {
     this.buildForm();
@@ -52,13 +55,16 @@ export class LoginComponent {
       .subscribe(
         {
           next: (res) => {
-            const { token, id, nome } = res.data;            
+            const { token, id, nome } = res.data;
             this.localStorageService.setLocalStorage('token', JSON.stringify(token));
             this.localStorageService.setLocalStorage('nome', JSON.stringify(nome.captalize()));
             this.localStorageService.setLocalStorage('id', id);
           },
-          error: () => { },
-          complete: () => {            
+          error: (msg) => {
+            const text: string = "Erro ao logar";
+            this.snackBarService.error(text);
+          },
+          complete: () => {
             this.router.navigateByUrl("/account")
           }
 
