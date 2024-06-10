@@ -62,10 +62,6 @@
         border-bottom: 1px solid #fff;
       }
 
-      button:hover {
-        cursor: pointer;
-      }
-
       button {
         margin-top: 10px;
         width: 60%;
@@ -80,10 +76,17 @@
         background-color: #d4ff00;
       }
 
+      .btnLogin:hover {
+        cursor: pointer !important;
+      }
+
       .btnSingUp {
         background: #333;
         color: #fff;
         margin-top: 20px;
+      }
+      .btnSingUp:hover {
+        cursor: pointer !important;
       }
     }
   }
