@@ -1,10 +1,15 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {
     path: "",
     component: HomeComponent
+  },
+  {
+    path: "home",
+    redirectTo: ""
   },
   {
     path: "create-account",
@@ -15,15 +20,12 @@ export const routes: Routes = [
     loadComponent: () => import("./pages/login/login.component").then(m => m.LoginComponent)
   },
   {
-    path: "account",
-    loadComponent: () => import("./pages/user/user.component").then(m => m.UserComponent)
-  },
-  {
     path: "about",
     loadComponent: () => import("./pages/about/about.component").then(m => m.AboutComponent)
-  }, 
+  },
   {
-    path: "home",
-    redirectTo: ""
-  }
+    path: "account",
+    loadComponent: () => import("./pages/user/user.component").then(m => m.UserComponent),
+    canActivate: [authGuard]
+  },
 ];
