@@ -6,6 +6,7 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from '../../components/header/header.component';
 import { UserServiceService } from '../../services/user-service.service';
+import { FormValidatios } from '../../validators/form-validator';
 
 
 @Component({
@@ -26,12 +27,9 @@ export class CreateAccountComponent {
 
   singUpForm!: FormGroup;
   private fb: FormBuilder = inject(FormBuilder)
-  formControl: any;
-  emailFormControl: any;
   hide = true;
   private userService: UserServiceService = inject(UserServiceService);
 
-  errorMessage = '';
 
   ngOnInit() {
     this.buildForm();
@@ -41,9 +39,13 @@ export class CreateAccountComponent {
     this.singUpForm = this.fb.group(
       {
         name: [null, Validators.required],
-        lastName: [null, Validators.required],
         email: [null, [Validators.required, Validators.email]],
-        password: [null, [Validators.required, Validators.minLength(6)]]
+        password: [null, [Validators.required, Validators.minLength(6)]],
+        confirPpassword: [null, [
+          Validators.required,
+          Validators.minLength(6),
+          FormValidatios.equalsTo('password')]
+        ]
       }
     )
   }
