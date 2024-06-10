@@ -2,14 +2,15 @@
   max-width: 90%;
   margin: 0 auto;
   padding: 20px;
-
   .mat-stepper-horizontal,
   mat-stepper-label-position-end,
   ng-tns-c3820311392-0 {
     border-radius: 8px;
+    border: 1px solid  black;
   }
 
   mat-form-field {
+    margin-top: 8px;
     width: 100%;
   }
 

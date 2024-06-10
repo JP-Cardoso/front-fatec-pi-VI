@@ -4,11 +4,6 @@
       <mat-card-title class="title">Sua conta ainda não foi liberada?</mat-card-title>
       <mat-card-subtitle class="subtitle">Preencha o formulário a baixo para ter seu crédito aprovado</mat-card-subtitle>
     </mat-card-header>
-    <mat-card-actions class="card-actions">
-      <button mat-button (click)="openForm(true)">Formulário</button>
-    </mat-card-actions>
-  </mat-card>
-  @if(status) {
     <app-not-account-form></app-not-account-form>
-  }
+  </mat-card>
 </div>
