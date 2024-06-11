@@ -58,7 +58,7 @@ export class CreateAccountComponent {
           next: () => {},
           error:(msg) => {
             const text: string = "Erro ao cadastrar usuário";
-            this.snackBarService.error(msg);
+            this.snackBarService.error(text);
           }
         }
       )

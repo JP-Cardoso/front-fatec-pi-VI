@@ -6,7 +6,7 @@
     <form [formGroup]="singUpForm">
       <mat-form-field class="input">
         <mat-label>Digite seu nome:</mat-label>
-        <input matInput placeholder="João da Silva" formControlName="email" required>
+        <input matInput placeholder="João da Silva" formControlName="name" required>
         @if (singUpForm.hasError('email') && !singUpForm.hasError('required')) {
         <mat-error>Please enter a valid email address</mat-error>
         }
