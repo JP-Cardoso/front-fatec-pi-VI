@@ -57,7 +57,7 @@ export class LoginComponent {
           next: (res) => {
             const { token, id, nome } = res.data;
             this.localStorageService.setLocalStorage('token', JSON.stringify(token));
-            this.localStorageService.setLocalStorage('nome', JSON.stringify(nome.captalize()));
+            this.localStorageService.setLocalStorage('nome', JSON.stringify(nome));
             this.localStorageService.setLocalStorage('id', id);
           },
           error: (msg) => {

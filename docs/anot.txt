@@ -1,0 +1,31 @@
+ { 
+  "genero": "M",  // "feminino", "masculino" 
+  "filhos": 2,  // Número de filhos 
+  "estado_civil": "casado",  // "casado", "solteiro", "divorciado", "viuvo" 
+  "faixa_etaria": "De 31 ate 40 Anos",  // "Acima de 60 Anos", "De 51 ate 60 Anos", "De 41 ate 50 Anos", "De 31 ate 40 Anos", "De 22 ate 30 Anos", "Ate 21 Anos" 
+  "membros_da_familia": 4,  // Tamanho da família 
+
+  "carro_proprio": “sim”,  // “sim” , ”nao” 
+  "casa_propria": “sim”,  //”sim”, “nao” 
+  "tipo_de_moradia": "imovel proprio",  // "imovel proprio", "mora com os pais", "imovel financiado", "imovel alugado", "imovel comercial", "imovel compartilhado" 
+  "tipo_de_renda": "trabalhando",  // "trabalhando", "representante comercial", "aposentado", "funcionario publico", "estudante" 
+  "grau_de_escolaridade": "ensino superior",  // " ensino medio / tecnico", "ensino superior", "superior incompleto", "ensino medio incompleto", "tecnologo" 
+  
+  "celular": 1 // 1 (ATENÇÃO só possui esse parâmetro o que indica ser obrigatório) 
+  "telefone_trabalho": 0,  // 1 se possui telefone de trabalho, 0 se não possui 
+  "telefone": 0,  // 1 se possui telefone fixo, 0 se não possui 
+  "email": 0,  // 1 se possui email, 0 se não possui 
+  
+  "renda_anual": "De 800k ate 950k",  // "Ate 500k", "De 500k ate 650k", "De 650k ate 800k", "De 800k ate 950k", "De 950k ate 1100k", "De 1100k ate 1250k", "De 1250k ate 1400k", "De 1400k ate 5000k" 
+  "tempo_emprego": "De 11 ate 20 Anos",  // "Acima de 40 Anos", "De 31 ate 40 Anos", "De 21 ate 30 Anos", "De 11 ate 20 Anos", "De 6 ate 10 Anos", "Ate 5 Anos", "Desempregado" 
+  "tempo_registro_dados": "De 24 ate 35 Meses",  // "Acima de 48 Meses", "De 36 ate 47 Meses", "De 24 ate 35 Meses", "De 13 ate 23 Meses", "De 1 ate 12 Meses", "Nenhum mes" 
+  
+  "status": "Aprovado"  // "Reprovado" ou "Aprovado" 
+} 
+
+Acima de 60 Anos
+De 51 ate 60 Anos
+De 41 ate 50 Anos
+De 31 ate 40 Anos
+De 22 ate 30 Anos
+Ate 21 Anos

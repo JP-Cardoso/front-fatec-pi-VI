@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @Component({
@@ -13,7 +14,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
     MatStepperModule,
     MatInputModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   templateUrl: './not-account-form.component.html',
   styleUrl: './not-account-form.component.scss'
@@ -21,72 +23,69 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class NotAccountFormComponent {
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
+  thirdFormGroup!: FormGroup;
 
   constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.buildForm();
+    this.firstFormGroupBuild();
+    this.secondFormGroupBuild();
+    this.thirdFormGroupBuild();
   }
 
-  buildForm() {
+  firstFormGroupBuild() {
     this.firstFormGroup = this._formBuilder.group({
-      name: ['', Validators.required]
+      genero: ['', Validators.required],
+      filhos: ['', Validators.required],
+      estado_civil: ['', Validators.required],
+      faixa_etaria: ['', Validators.required],
+      membros_da_familia: ['', Validators.required],
     });
+  }
+
+  secondFormGroupBuild() {
     this.secondFormGroup = this._formBuilder.group({
-      email: ['', [Validators.required, Validators.email]]
+      carro_proprio: ['', [Validators.required]],
+      casa_propria: ['', [Validators.required]],
+      tipo_de_moradia: ['', [Validators.required]],
+      tipo_de_renda: ['', [Validators.required]],
+      grau_de_escolaridade: ['', [Validators.required]]
+    });
+  }
+
+  thirdFormGroupBuild() {
+    this.thirdFormGroup = this._formBuilder.group({
+      renda_anual: ['', [Validators.required]],
+      tempo_emprego: ['', [Validators.required]],
+      tempo_registro_dado: ['Nenhum mes']
     });
   }
 
   onValidateForm() {
-    if (this.firstFormGroup.valid && this.secondFormGroup.valid) {
+    console.log(this.firstFormGroup.value);
+    const isvalid = this.isValid();
+
+    if (isvalid) {
       const formData = {
         ...this.firstFormGroup.value,
-        ...this.secondFormGroup.value
+        ...this.secondFormGroup.value,
+        ...this.thirdFormGroup.value,
+        celular: 1,
+        telefone_trabalho: 1,
+        telefone: 0,
+        email: 1
       };
       console.log('Formulário enviado com sucesso!', formData);
     }
   }
 
-  buildObject() {}
+  isValid(): boolean {
+    return this.firstFormGroup.valid && this.secondFormGroup.valid && this.thirdFormGroup ? true : false;
+  }
 
-  onSubmit() {}
+  buildObject() { }
+
+  onSubmit() { }
+
+
 }
-
-/**
- * code_gender: genero (M e F);
- * flag_own_car: tem carro e quantidade?
- * flag_own_realty: possui imovel e quantidae?
- * cnt_children: quantidade de filhos
- * amt_income_type: renda anual
- * name_education_type: qual o parametro? é númerico?
- * name_family_status: qual o parametro? é númerico?
- * name_housing_type: qual o parametro? é númerico?
- * days_birth: idade
- * days_employed: dias
- * flag_mobile: qual o parametro? é númerico?
- * flag_work_phone: qual o parametro? é númerico?
- * flag_phone: qual o parametro? é o número do telefone fixo?
- * occupation_type: qual o parametro
- * cnt_fam_members: quantidade de pessoas
- * month_balance: não entendi
- * status: não entendi
- * 
- * 'CODE_GENDER': 'genero',
-    'FLAG_OWN_CAR': 'carro_proprio',
-    'FLAG_OWN_REALTY': 'casa_propria',
-    'CNT_CHILDREN': 'filhos',
-    'AMT_INCOME_TOTAL': 'renda',
-    'NAME_INCOME_TYPE': 'tipo_de_renda',
-    'NAME_EDUCATION_TYPE': 'grau_de_escolaridade',
-    'NAME_FAMILY_STATUS': 'estado_civil',
-    'NAME_HOUSING_TYPE': 'tipo_de_moradia',
-    'FLAG_MOBIL': 'celular',
-    'FLAG_WORK_PHONE': 'telefone_trabalho',
-    'FLAG_PHONE': 'telefone',
-    'FLAG_EMAIL': 'email',
-    'CNT_FAM_MEMBERS': 'membros_da_familia',
-    'MONTHS_BALANCE': 'saldo_meses',
-    'STATUS' : 'status',
-    'DAYS_BIRTH' : 'idade_em_dias',
-    'DAYS_EMPLOYED' : 'dias_empregado'
- */

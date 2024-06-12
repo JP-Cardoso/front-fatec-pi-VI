@@ -23,7 +23,8 @@ export class LeftPanelComponent implements OnInit {
   }
 
   logout() {
-    this.router.navigateByUrl("/")
+    this.localStorageService.clearAll();
+    this.router.navigateByUrl("/");
   }
 
   onClickPage(route: string | any) {
