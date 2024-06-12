@@ -21,4 +21,8 @@ export class UserServiceService {
   register(data: any): Observable<any> {
     return this.http.post<any>(`${this.url}/user`, data);
   }
+
+  analytics(data: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/analytics`, data)
+  }
 }

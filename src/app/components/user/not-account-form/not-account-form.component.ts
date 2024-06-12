@@ -5,6 +5,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialog } from '@angular/material/dialog';
+import { UserServiceService } from '../../../services/user-service.service';
+import { DialogComponent } from '../../dialog/dialog.component';
 
 
 @Component({
@@ -15,7 +18,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
   ],
   templateUrl: './not-account-form.component.html',
   styleUrl: './not-account-form.component.scss'
@@ -25,7 +28,11 @@ export class NotAccountFormComponent {
   secondFormGroup!: FormGroup;
   thirdFormGroup!: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(
+    private _formBuilder: FormBuilder,
+    private dialog: MatDialog,
+    private userService: UserServiceService,
+  ) { }
 
   ngOnInit() {
     this.firstFormGroupBuild();
@@ -62,9 +69,9 @@ export class NotAccountFormComponent {
   }
 
   onValidateForm() {
-    console.log(this.firstFormGroup.value);
+    this.openDialog();
     const isvalid = this.isValid();
-
+    let data = {}
     if (isvalid) {
       const formData = {
         ...this.firstFormGroup.value,
@@ -75,17 +82,34 @@ export class NotAccountFormComponent {
         telefone: 0,
         email: 1
       };
-      console.log('Formulário enviado com sucesso!', formData);
+      data = { ...formData }
     }
+    return data;
   }
 
   isValid(): boolean {
     return this.firstFormGroup.valid && this.secondFormGroup.valid && this.thirdFormGroup ? true : false;
   }
 
-  buildObject() { }
+  onSubmit() {
+    const data = this.onValidateForm();
+    this.userService.analytics(data)
+      .subscribe(
+        {
+          next: () => {
+            //abrir dialog
+            this.openDialog();
+           },
+          error: () => { },
+          complete: () => { }
+        }
+      )
+  }
 
-  onSubmit() { }
-
+  openDialog() {
+    const dialogRef = this.dialog.open(
+      DialogComponent
+    )
+  }
 
 }

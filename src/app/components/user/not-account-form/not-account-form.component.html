@@ -38,6 +38,7 @@
           <input matInput placeholder="4" type="number" formControlName="membros_da_familia" required>
         </mat-form-field>
         <div>
+          <button mat-button (click)="onValidateForm()">Enviar</button>
           <button mat-button matStepperNext>Próximo</button>
         </div>
       </form>
@@ -138,7 +139,7 @@
       <p>Formulário concluído!</p>
       <div>
         <button mat-button matStepperPrevious>Anterior</button>
-        <button mat-button (click)="onValidateForm()">Enviar</button>
+        <button mat-button (click)="onSubmit()">Enviar</button>
       </div>
     </mat-step>
   </mat-horizontal-stepper>
