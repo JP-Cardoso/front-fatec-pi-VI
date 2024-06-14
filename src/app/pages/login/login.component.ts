@@ -58,7 +58,7 @@ export class LoginComponent {
             const { token, id, nome } = res.data;
             this.localStorageService.setLocalStorage('token', JSON.stringify(token));
             this.localStorageService.setLocalStorage('nome', JSON.stringify(nome));
-            this.localStorageService.setLocalStorage('id', id);
+            this.localStorageService.setLocalStorage('id', JSON.stringify(id));
           },
           error: (msg) => {
             const text: string = "Erro ao logar";

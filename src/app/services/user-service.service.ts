@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -23,6 +23,14 @@ export class UserServiceService {
   }
 
   analytics(data: any): Observable<any> {
-    return this.http.post<any>(`${this.url}/analytics`, data)
+    return this.http.post<any>(`${this.url}/analytics`, data);
+  }
+
+  createAccount(id: string): Observable<any> {
+    return this.http.post<any>(`${this.url}/account`, id);
+  }
+
+  seachAccountData(idConta: string): Observable<any> {
+    return this.http.get<any>(`${this.url}/account/${idConta}`);
   }
 }

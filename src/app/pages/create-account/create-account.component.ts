@@ -41,7 +41,7 @@ export class CreateAccountComponent {
         name: [null, Validators.required],
         email: [null, [Validators.required, Validators.email]],
         password: [null, [Validators.required, Validators.minLength(6)]],
-        confirPpassword: [null, [
+        confirmPpassword: [null, [
           Validators.required,
           Validators.minLength(6),
           FormValidatios.equalsTo('password')]
@@ -55,8 +55,8 @@ export class CreateAccountComponent {
     this.userService.register(data).
       subscribe(
         {
-          next: () => {},
-          error:(msg) => {
+          next: () => { },
+          error: (msg) => {
             const text: string = "Erro ao cadastrar usuário";
             this.snackBarService.error(text);
           }
@@ -65,11 +65,11 @@ export class CreateAccountComponent {
   }
 
   formatJson() {
-    const { name, confirPpassword, email } = this.singUpForm.value;
+    const { name, confirmPpassword, email } = this.singUpForm.value;
     return {
       nome: name,
       email,
-      confirPpassword
+      password: confirmPpassword
     }
   }
 
