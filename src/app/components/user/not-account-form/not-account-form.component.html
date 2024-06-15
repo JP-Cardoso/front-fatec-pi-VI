@@ -6,8 +6,8 @@
         <mat-form-field>
           <mat-label>Genero</mat-label>
           <mat-select placeholder="Nome" formControlName="genero">
-            <mat-option value="M">Homem</mat-option>
-            <mat-option value="F">Mulher</mat-option>
+            <mat-option value=0>Homem</mat-option>
+            <mat-option value=1>Mulher</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field>
@@ -17,20 +17,20 @@
         <mat-form-field>
           <mat-label>Estado Civil</mat-label>
           <mat-select formControlName="estado_civil">
-            <mat-option value="solteiro">Solteiro</mat-option>
-            <mat-option value="casado">Casado</mat-option>
-            <mat-option value="divorciado">Divorciado</mat-option>
-            <mat-option value="viuvo">Viuvo</mat-option>
+            <mat-option value=0>Solteiro</mat-option>
+            <mat-option value=1>Casado</mat-option>
+            <mat-option value=2>Divorciado</mat-option>
+            <mat-option value=3>Viuvo</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Faixa etaria</mat-label>
           <mat-select formControlName="faixa_etaria">
-            <mat-option value="Ate 21 Anos">Ate 21 Anos</mat-option>
-            <mat-option value="De 22 ate 30 Anos">De 22 ate 30 Anos</mat-option>
-            <mat-option value="De 41 ate 50 Anos">De 41 ate 50 Anos</mat-option>
-            <mat-option value="De 51 ate 60 Anos">De 51 ate 60 Anos</mat-option>
-            <mat-option value="Acima de 60 Anos">Acima de 60 Anos</mat-option>
+            <mat-option value=0>Ate 21 Anos</mat-option>
+            <mat-option value=1>De 22 ate 30 Anos</mat-option>
+            <mat-option value=2>De 41 ate 50 Anos</mat-option>
+            <mat-option value=3>De 51 ate 60 Anos</mat-option>
+            <mat-option value=4>Acima de 60 Anos</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field>
@@ -38,7 +38,6 @@
           <input matInput placeholder="4" type="number" formControlName="membros_da_familia" required>
         </mat-form-field>
         <div>
-          <button mat-button (click)="onValidateForm()">Enviar</button>
           <button mat-button matStepperNext>Próximo</button>
         </div>
       </form>
@@ -51,46 +50,46 @@
         <mat-form-field>
           <mat-label>Carro próprio</mat-label>
           <mat-select formControlName="carro_proprio">
-            <mat-option value="sim">SIM</mat-option>
-            <mat-option value="nao">NÃO</mat-option>
+            <mat-option value=0>SIM</mat-option>
+            <mat-option value=1>NÃO</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Casa própria</mat-label>
           <mat-select formControlName="casa_propria">
-            <mat-option value="sim">SIM</mat-option>
-            <mat-option value="nao">NÃO</mat-option>
+            <mat-option value=0>SIM</mat-option>
+            <mat-option value=1>NÃO</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Tipo de moradia</mat-label>
           <mat-select formControlName="tipo_de_moradia">
-            <mat-option value="imovel proprio">Imovel proprio</mat-option>
-            <mat-option value="mora com os pais">Mora com os pais</mat-option>
-            <mat-option value="imovel financiado">Imovel financiado</mat-option>
-            <mat-option value="imovel alugado">Imovel alugado</mat-option>
-            <mat-option value="imovel comercial">Imovel comercial</mat-option>
-            <mat-option value="imovel compartilhado">Imovel compartilhado</mat-option>
+            <mat-option value=0>Imovel proprio</mat-option>
+            <mat-option value=1>Mora com os pais</mat-option>
+            <mat-option value=2>Imovel financiado</mat-option>
+            <mat-option value=3>Imovel alugado</mat-option>
+            <mat-option value=4>Imovel comercial</mat-option>
+            <mat-option value=5>Imovel compartilhado</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Tipo de renda</mat-label>
           <mat-select formControlName="tipo_de_renda">
-            <mat-option value="trabalhando">Trabalhando</mat-option>
-            <mat-option value="representante comercial">Representante comercial</mat-option>
-            <mat-option value="aposentado">Aposentado</mat-option>
-            <mat-option value="funcionario publico">Funcionario publico</mat-option>
-            <mat-option value="estudante">Estudante</mat-option>
+            <mat-option value=0>Trabalhando</mat-option>
+            <mat-option value=1>Representante comercial</mat-option>
+            <mat-option value=2>Aposentado</mat-option>
+            <mat-option value=3>Funcionario publico</mat-option>
+            <mat-option value=4>Estudante</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Grau de escolaridade</mat-label>
           <mat-select formControlName="grau_de_escolaridade">
-            <mat-option value="ensino medio incompleto">Ensino médio incompleto</mat-option>
-            <mat-option value="ensino medio">Ensino médio</mat-option>
-            <mat-option value="tecnologo">Tecnologo</mat-option>
-            <mat-option value="superior incompleto">Superior incompleto</mat-option>
-            <mat-option value="ensino superior">Ensino superior</mat-option>
+            <mat-option value=0>Ensino médio incompleto</mat-option>
+            <mat-option value=1>Ensino médio</mat-option>
+            <mat-option value=2>Tecnologo</mat-option>
+            <mat-option value=3>Superior incompleto</mat-option>
+            <mat-option value=4>Ensino superior</mat-option>
           </mat-select>
         </mat-form-field>
         <div>
@@ -106,26 +105,26 @@
         <mat-form-field>
           <mat-label>Renda Anual</mat-label>
           <mat-select formControlName="renda_anual">
-            <mat-option value="Ate 500k">Ate 500k</mat-option>
-            <mat-option value="De 500k ate 650k">De 500k ate 650k</mat-option>
-            <mat-option value="De 650k ate 800k">De 650k ate 800k</mat-option>
-            <mat-option value="De 800k ate 950k">"De 800k ate 950k</mat-option>
-            <mat-option value="De 950k ate 1100k">De 950k ate 1100k</mat-option>
-            <mat-option value="De 1100k ate 1250k">De 1100k ate 1250k</mat-option>
-            <mat-option value="De 1250k ate 1400k">De 1250k ate 1400k</mat-option>
-            <mat-option value="De 1400k ate 5000k">De 1400k ate 5000k</mat-option>
+            <mat-option value=0>Ate 500k</mat-option>
+            <mat-option value=1>De 500k ate 650k</mat-option>
+            <mat-option value=2>De 650k ate 800k</mat-option>
+            <mat-option value=3>"De 800k ate 950k</mat-option>
+            <mat-option value=4>De 950k ate 1100k</mat-option>
+            <mat-option value=5>De 1100k ate 1250k</mat-option>
+            <mat-option value=6>De 1250k ate 1400k</mat-option>
+            <mat-option value=7>De 1400k ate 5000k</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Tempo de Emprego</mat-label>
           <mat-select formControlName="tempo_emprego">
-            <mat-option value="Ate 5 Anos">Ate 5 Anos</mat-option>
-            <mat-option value="De 6 ate 10 Anos">De 6 ate 10 Anos</mat-option>
-            <mat-option value="De 11 ate 20 Anos">De 11 ate 20 Anos</mat-option>
-            <mat-option value="De 21 ate 30 Anos">De 21 ate 30 Anos</mat-option>
-            <mat-option value="De 31 ate 40 Anos">De 31 ate 40 Anos</mat-option>
-            <mat-option value="Acima de 40 Anos">Acima de 40 Anos</mat-option>
-            <mat-option value="Desempregado">Desempregado</mat-option>
+            <mat-option value=0>Ate 5 Anos</mat-option>
+            <mat-option value=1>De 6 ate 10 Anos</mat-option>
+            <mat-option value=2>De 11 ate 20 Anos</mat-option>
+            <mat-option value=3>De 21 ate 30 Anos</mat-option>
+            <mat-option value=4>De 31 ate 40 Anos</mat-option>
+            <mat-option value=5>Acima de 40 Anos</mat-option>
+            <mat-option value=6>Desempregado</mat-option>
           </mat-select>
         </mat-form-field>
         <div>

@@ -27,7 +27,7 @@
         justify-content: space-around; // Corrigido para não ter duplicidade
         align-items: center;
         padding: 4px;
-
+        gap: 20px;
         img {
           border-radius: 50%;
           width: 50px;
@@ -36,7 +36,7 @@
         }
 
         h2 {
-          margin: 15px 0 10px;
+          margin: 10px 0 10px;
           font-size: 24px;
           color: white;
         }

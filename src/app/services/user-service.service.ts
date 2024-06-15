@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 })
 export class UserServiceService {
 
-  private readonly url: string = environment.BASE_URL;
+  private readonly url: string = environment.PRORD_URL;
 
   constructor(
     private http: HttpClient,
@@ -32,5 +32,9 @@ export class UserServiceService {
 
   seachAccountData(idConta: string): Observable<any> {
     return this.http.get<any>(`${this.url}/account/${idConta}`);
+  }
+
+  healthcheck(): Observable<any> {
+    return this.http.get<any>(`${this.url}/healthcheck`);
   }
 }

@@ -29,7 +29,7 @@ export class CardAccountComponent {
         {
           next: (res: any) => {
             this.agencia = res.agencia;
-            this.saldo = parseFloat(res.saldo)
+            this.saldo = res.saldo;
             console.log(res);
           }
         }
