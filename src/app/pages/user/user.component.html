@@ -1,15 +1,20 @@
 <app-left-panel></app-left-panel>
+@if(spinner === true) {
 @if (account) {
 <div class="container">
   <div class="card-container">
     <app-card-account></app-card-account>
     <app-card-account></app-card-account>
-    <!-- <app-card-info></app-card-info> -->
   </div>
   <app-transactions></app-transactions>
 </div>
 } @else {
-  <div class="container-not-account">
-    <app-not-account></app-not-account>
+<div class="container-not-account">
+  <app-not-account></app-not-account>
+</div>
+}
+} @else {
+  <div class="mat-spinner">
+    <mat-spinner></mat-spinner>
   </div>
 }

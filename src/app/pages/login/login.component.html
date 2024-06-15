@@ -3,7 +3,7 @@
   <div class="login-container">
     <div class="login-header">
       <h1>Login</h1>
-      <p>Welcome back! Please log in to access your account.</p>
+      <p>Bem-vindo de volta! Por favor, faça login para acessar sua conta.</p>
     </div>
     <form [formGroup]="loginForm">
       <mat-form-field class="input">
@@ -26,13 +26,13 @@
       </mat-form-field>
     </form>
     <div class="options">
-      <a href="#">Forgot Password?</a>
+      <a href="#">Esqueceu a senha?</a>
       <button type="submit" (click)="onSubmit()" [disabled]="loginForm.invalid" class="btnLogin">Login</button>
       <button type="button" class="btnSingUp">Sign Up</button>
     </div>
     <div class="card-info">
       <span></span>
-      <p>Or Continue with</p>
+      <p>Ou continue com</p>
       <span></span>
     </div>
     <div class="social-container">

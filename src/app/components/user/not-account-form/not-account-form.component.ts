@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { UserServiceService } from '../../../services/user-service.service';
 import { DialogComponent } from '../../dialog/dialog.component';
 import { LocalStorageService } from '../../../services/local-storage.service';
+import { SnackBarService } from '../../../services/snack-bar.service';
 
 
 @Component({
@@ -30,6 +31,8 @@ export class NotAccountFormComponent {
   thirdFormGroup!: FormGroup;
   private localStorageService: LocalStorageService = inject(LocalStorageService);
   private idConta!: string;
+  snackBarService: SnackBarService = inject(SnackBarService);
+
   constructor(
     private _formBuilder: FormBuilder,
     private dialog: MatDialog,
@@ -119,7 +122,10 @@ export class NotAccountFormComponent {
             //abrir dialog
             this.openDialog();
           },
-          error: () => { },
+          error: () => { 
+            const msg:string = "Desculpe, tivemos algum problema interno :("
+            this.snackBarService.error(msg);
+          },
           complete: () => { }
         }
       )

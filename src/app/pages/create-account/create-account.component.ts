@@ -8,6 +8,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { UserServiceService } from '../../services/user-service.service';
 import { FormValidatios } from '../../validators/form-validator';
 import { SnackBarService } from '../../services/snack-bar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-account',
@@ -28,6 +29,7 @@ export class CreateAccountComponent {
   singUpForm!: FormGroup;
   private fb: FormBuilder = inject(FormBuilder);
   private userService: UserServiceService = inject(UserServiceService);
+  private router: Router = inject(Router)
   hide = true;
   snackBarService: SnackBarService = inject(SnackBarService);
 
@@ -55,7 +57,11 @@ export class CreateAccountComponent {
     this.userService.register(data).
       subscribe(
         {
-          next: () => { },
+          next: (msg) => { 
+            this.snackBarService.success(msg.msg);
+            this.singUpForm.reset();
+            this.router.navigateByUrl('/login');
+          },
           error: (msg) => {
             const text: string = "Erro ao cadastrar usuário";
             this.snackBarService.error(text);
